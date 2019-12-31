@@ -6,10 +6,10 @@ Practice problems in Python.
 
 Most of these problems are aimed towards improving my understanding of basic data structures and algorithms, including:
 
-BFS
-DFS
-Linked lists
-Tries
+- BFS
+- DFS
+- Linked lists
+- Tries
 
 
-- Al
+Al
