@@ -1,6 +1,6 @@
-# Practice-Problems
+# DSA-Excersises
 
-Practice problems in Python.
+DSA practice problems in Python. Excersises are taken from leetcode.com
 
 # Data structures
 
@@ -10,6 +10,5 @@ Most of these problems are aimed towards improving my understanding of basic dat
 - DFS
 - Linked lists
 - Tries
-
 
 Al
