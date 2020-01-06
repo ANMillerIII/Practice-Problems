@@ -1,0 +1,30 @@
+$(function() {
+
+    $("#submit").hide();
+
+    $("#page-changer select").change(function() {
+        window.location = $("#page-changer select option:selected").val();
+    })
+
+});
+
+$(function() {
+
+    $("#submit2").hide();
+
+    $("#page-changer2 select").change(function() {
+        window.location = $("#page-changer2 select option:selected").val();
+    })
+
+});
+
+
+$(function() {
+
+    $("#submit3").hide();
+
+    $("#page-changer3 select").change(function() {
+        window.location = $("#page-changer3 select option:selected").val();
+    })
+
+});

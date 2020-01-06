@@ -1,0 +1,43 @@
+/*+clearfix {*/
+.qa_reviewer:after
+{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+}
+.qa_reviewer
+{
+	display: inline-block;
+}
+.qa_reviewer
+{
+	/*\*/
+	display: block;
+	/**/
+	-height: 1px;
+}
+/*+}*/
+/*[clearfix]*/.qa_reviewer
+{
+}
+.info_box
+{
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	height: 45px;
+	line-height: 45px;
+}
+.button_box
+{
+	/*+placement:float-right 0px 0px;*/
+	float: right;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
