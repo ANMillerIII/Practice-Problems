@@ -1,0 +1,494 @@
+/*+clearfix {*/
+#wrapper * {
+	box-sizing: content-box;
+}
+
+/*+clearfix {*/
+#wrapper:after, DIV.com_box:after, DIV.rep_box:after, .dashrow:after, .dashbox:after
+{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+}
+#wrapper, DIV.com_box, DIV.rep_box, .dashrow, .dashbox
+{
+	display: inline-block;
+}
+#wrapper, DIV.com_box, DIV.rep_box, .dashrow, .dashbox
+{
+	/*\*/
+	display: block;
+	/**/
+	-height: 1px;
+}
+/*+}*/
+/*[clearfix]*/#wrapper
+{
+	width: 800px;
+	color: #000000;
+	font-family: Verdana;
+	font-size: 11pt;
+	float: none;
+}
+DIV#graph
+{
+	float: left;
+}
+.bottom_box H5
+{
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+.bottom_box
+{
+	width: 96%;
+	margin-top: 10px;
+	padding: 7px;
+}
+/*Comment Box Styles*/
+/*[clearfix]*/DIV.com_box
+{
+	border: 1px solid #000000;
+	margin-bottom: 0px;
+	margin-top: 12px;
+	padding: 8px;
+	/*+border-radius:4px;*/
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+}
+DIV.com_details
+{
+	/*+placement:float-right 0px 0px;*/
+	float: right;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	font-size: 9pt;
+}
+DIV.com_details INPUT
+{
+	height: 37px;
+	text-align: right;
+	margin-left: 15px;
+}
+DIV.com_detail_questions
+{
+	/*+placement:float-right 0px 0px;*/
+	float: right;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	font-size: 9pt;
+}
+DIV.com_details P
+{
+	margin: 0px 0px 6px;
+}
+/*[clearfix]*/DIV.rep_box
+{
+	border: 1px solid #000000;
+	margin-left: 38px;
+	margin-bottom: 1px;
+	margin-top: 2px;
+	padding: 7px;
+	/*+border-radius:4px;*/
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+}
+DIV.break
+{
+	page-break-before: always;
+}
+DIV.left
+{
+	float: none;
+}
+BUTTON
+{
+	display: none;
+}
+H3
+{
+	font-size: 14pt;
+}
+DIV.right, #menu, .chzn-drop, #log, .logout, A.error, .tooltip, .tip
+{
+	display: none;
+}
+TEXTAREA, INPUT, INPUT:disabled, TEXTAREA:disabled
+{
+	background-color: #FFFFFF;
+	border: 0px solid #000000;
+	color: #000000;
+	font-size: 11pt;
+}
+.contract_reviewer
+{
+	width: 776px;
+	margin-top: 10px;
+	padding: 6px;
+}
+.contract_reviewer TEXTAREA
+{
+	width: 548px;
+}
+TEXTAREA
+{
+	width: 780px;
+}
+A, INPUT, INPUT:disabled, SELECT, SELECT:disabled
+{
+	color: #000000;
+	text-decoration: none;
+	border: 0px solid #000000;
+	/*font-size: 11pt;*/
+	float: none;
+}
+INPUT.chosen-search-input
+{
+	display: none;
+}
+.button
+{
+	display: none;
+}
+.expander
+{
+	font-weight: bold;
+	page-break-after: always;
+}
+.bottom_box .expander
+{
+	display: none;
+}
+.dashboard TABLE{
+	float: left;	
+}
+TABLE
+{
+	border: 2px solid #000000;
+	border-collapse: collapse;
+	/*width: 791px;*/
+	/*+placement:float-left 0px 0px;*/
+	position: relative;
+	left: 0px;
+	top: 0px;
+	margin-bottom: 9px;
+	table-layout: fixed;
+}
+TH
+{
+	background-color: #EAE8E8;
+}
+TD, TH
+{
+	border: 1px solid #000000;
+	word-wrap: break-word;
+}
+.print_hide
+{
+	display: none;
+}
+.tcp_table
+{
+	border: 0px solid #000000;
+}
+TABLE.tcp_table TD
+{
+	border: 0px solid #000000;
+}
+DIV.contract_reviewer, .sig_box, .bottom_box
+{
+	border: 2px solid #000000;
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	border-radius: 6px;
+}
+.sig_box
+{
+	width: 226px;
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	margin-top: 10px;
+	margin-bottom: 0;
+	padding: 7px;
+	height: 179px;
+	margin-left: 15px;
+}
+.signatures
+{
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+/*Forecasts*/
+#testPicture
+{
+	/*+placement:float-right 0px 0px;*/
+	float: right;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+#wrapper P
+{
+	max-width: 636px;
+	margin-top: 0px;
+}
+.mainimage
+{
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+.hdr
+{
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 6px;
+	margin-bottom: 2px;
+}
+.legendvalue
+{
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 70px;
+	height: 52px;
+	margin: 4px 8px 4px 14px;
+	vertical-align: middle;
+	line-height: 54px;
+	text-align: center;
+	font-weight: normal;
+}
+.graphwlegend
+{
+	border: 3px solid #000000;
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 890px;
+}
+.tablelegend
+{
+	/*+border-radius:7px;*/
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-khtml-border-radius: 7px;
+	border-radius: 7px;
+	border: 3px solid #006000;
+	width: 191px;
+	height: 191px;
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+#weekselector
+{
+	display: none;
+}
+#page-changer, #page-changer2
+{
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+THEAD
+{
+	display: table-header-group;
+}
+#summarytable
+{
+	width: 878px;
+	font-size: 10pt;
+}
+#summarytable A
+{
+	font-size: 10pt;
+}
+DIV.fullwidth P
+{
+	/*+placement:float-left 2px 16px;*/
+	float: left;
+	position: relative;
+	left: 2px;
+	top: 16px;
+}
+.calendar
+{
+	/*+border-radius:7px;*/
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-khtml-border-radius: 7px;
+	border-radius: 7px;
+	border: 3px solid #006000;
+	/*+placement:float-right 0px 0px;*/
+	float: right;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	overflow: auto;
+	margin: 8px 8px 8px 0px;
+	padding: 0px 2px 10px 10px;
+	font-weight: normal;
+	width: 170px;
+	text-align: center;
+}
+.calendar TABLE
+{
+	width: auto;
+}
+/*Dashboards*/
+/*[clearfix]*/.dashrow
+{
+	width: 1000px;
+	border: 2px solid #727272;
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	/*+border-radius:5px;*/
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	margin-top: 2px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+}
+DIV#row_0
+{
+	margin-bottom: 4px;
+}
+/*[clearfix]*/.dashbox
+{
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+DIV#table_0
+{
+	height: 45px;
+}
+DIV#table_2
+{
+	padding-top: 3px;
+}
+DIV.chosen-container-single
+{
+	/*+placement:float-left 0px 0px;*/
+	float: left;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	font-weight: bold;
+}
+TABLE.dashtable TR TD
+{
+	border: 0px solid #000000;
+	white-space: nowrap;
+	overflow: hidden;
+}
+/*Don't allow drop-down values to wrap to next line*/
+DIV#row_0 .chosen-container
+{
+	white-space: nowrap;
+	overflow: hidden;
+}
+TABLE.dashtable
+{
+	border: 0px solid #000000;
+	width: 90%;
+}
+TR.total_row
+{
+	border-top: 2px solid #000000;
+	font-weight: bold;
+}
+.tiptext
+{
+	display: none;
+}
+/*Ensure the chart doesn't float left of the filters --- Firefox 29*/
+.outer
+{
+	clear: both;
+}
+/*Try to not allow rows to break across pages.  YMMV*/
+TR, TD, TH
+{
+	page-break-inside: avoid !important;
+}
+.right_align
+{
+	text-align: right;
+}
+.center_align
+{
+	text-align: center;
+}
+TABLE.reporting TBODY TR.reporting_dummy
+{
+	display: none;
+}
+TABLE.reporting .tip
+{
+	display: block;
+}
+TABLE.reporting TH
+{
+	text-align: left;
+}
+DIV #log
+{
+	display: block;
+}
+DIV.bottom_box H4 .expander
+{
+	display: block;
+}
+DIV #content
+{
+	display: block;
+}
+
+body {
+	min-width: initial !important;
+}
+
+div.container {
+	min-width: initial !important;
+	margin: initial !important;
+}
