@@ -31,3 +31,7 @@ assert(Solution.strobo(None, 123)) == False
 assert(Solution.strobo(None, 111)) == True
 assert(Solution.strobo(None, 181)) == True
 assert(Solution.strobo(None, 916)) == True
+
+
+
+for i in {1..100}; do cp test.ogg "test$i.ogg"; done

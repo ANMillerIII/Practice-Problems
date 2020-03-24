@@ -1,0 +1,434 @@
+
+ ANSYS Mechanical Enterprise                       
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *            ANSYS 2019 R1          LEGAL NOTICES             *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2018 ANSYS, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2015 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+ 2019 R1 
+     
+ Point Releases and Patches installed:   
+     
+ ANSYS, Inc. Products 2019 R1
+ Autodyn 2019 R1 
+ LS-DYNA 2019 R1 
+ Mechanical Products 2019 R1 
+ Parasolid Geometry Interface 2019 R1
+ CFX (includes CFD-Post) 2019 R1 
+ Fluent (includes CFD-Post) 2019 R1  
+ TurboGrid 2019 R1   
+
+
+          *****  ANSYS COMMAND LINE ARGUMENTS  *****
+  INITIAL JOBNAME              = pert273-11dpl11s                                                                                                                                                                                                                                        
+  BATCH MODE REQUESTED (-b)    = LIST
+  INPUT FILE COPY MODE (-c)    = COPY
+  INPUT FILE NAME              = /proc/88445/fd/0
+  OUTPUT FILE NAME             = /home/apps/ansys_inc/VT_Reports/pert273-11dpl11s_10102019164605/pert273-11dpl11s1.out
+  START-UP FILE MODE           = NOREAD
+  STOP FILE MODE               = NOREAD
+
+ RELEASE= 2019 R1              BUILD= 19.3      UP20181204   VERSION=LINUX x64   
+ CURRENT JOBNAME=pert273-11dpl11s1  16:46:31  OCT 10, 2019 CP=      0.207
+
+
+ *** VERIFICATION RUN - CASE pert273-11dpl11s                 ***  OPTION=  4
+
+ CURRENT JOBNAME REDEFINED AS pert273-11dpl11s-test
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .    10
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+   INERTIA LOADS                        X           Y           Z 
+      ACEL . . . . . . . . . . . .  0.0000     0.20000E+06  0.0000    
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS
+      ITEM     FREQUENCY   COMPONENT
+       ALL        ALL               
+
+
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1   1357.17    
+ AN AVERAGE OF THE X-, Y-, AND Z-DIRECTION MASS TERMS ARE USED
+  Memory available (MB) =    0.0    ,  Memory required (MB) =    0.0    
+
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        80  SOLID273      0.000   0.000000
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        80  SOLID273      0.000   0.000000
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+ *** TIME =  0.100000         TIME INC =  0.100000      NEW TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     2  COMPLETED.    CUM ITER =      2
+ *** TIME =  0.200000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     3  COMPLETED.    CUM ITER =      3
+ *** TIME =  0.300000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     4  COMPLETED.    CUM ITER =      4
+ *** TIME =  0.400000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     5  COMPLETED.    CUM ITER =      5
+ *** TIME =  0.500000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     6  COMPLETED.    CUM ITER =      6
+ *** TIME =  0.600000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     7  COMPLETED.    CUM ITER =      7
+ *** TIME =  0.700000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     8  COMPLETED.    CUM ITER =      8
+ *** TIME =  0.800000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     9  COMPLETED.    CUM ITER =      9
+ *** TIME =  0.900000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP    10  COMPLETED.    CUM ITER =     10
+ *** TIME =   1.00000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.000
+
+
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+                      L O A D   S T E P   O P T I O N S
+
+   SOLUTION TO BE PERTURBED CORRESPONDS TO
+      TIME . . . . . . . . . . . . . . . . . . . .  1.0000    
+      LOAD STEP. . . . . . . . . . . . . . . . . .     1
+      SUBSTEP. . . . . . . . . . . . . . . . . . .    10
+   STRESS-STIFFENING . . . . . . . . . . . . . . .    ON
+   INERTIA LOADS                        X           Y           Z 
+      ACEL . . . . . . . . . . . .  0.0000     0.20000E+06  0.0000    
+
+ *** NOTE ***                            CP =       0.000   TIME= 00:00:00
+ This SOLVE command is only used to generate the matrices needed to      
+ perform the linear perturbation analysis.  The linear perturbation      
+ analysis corresponds to time = 1 (load step = 1, substep = 10).  No     
+ results are being written.                                              
+
+
+ LINEAR PERTURBATION ANALYSIS PROCEDURE DELETES ALL
+ BOUNDARY CONDITIONS EXCEPT INERTIA LOADS, CONSTRAINTS
+ AND TEMPERATURES FROM DATABASE
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   THERMAL STRAINS INCLUDED IN THE LOAD VECTOR . .   YES
+   INERTIA LOADS                        X           Y           Z 
+      ACEL . . . . . . . . . . . .  0.0000     0.20000E+06  0.0000    
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS
+      ITEM     FREQUENCY   COMPONENT
+       ALL        ALL               
+
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1   1357.17    
+ AN AVERAGE OF THE X-, Y-, AND Z-DIRECTION MASS TERMS ARE USED
+
+  DAMPED SYS CALCULATION OF UP TO   24 EIGENVECTORS.
+  NUMBER OF EQUATIONS              =        10560
+  MAXIMUM WAVEFRONT                =            0
+  MAXIMUM MODES STORED             =           24
+  MINIMUM EIGENVALUE               =  0.00000E+00
+  MAXIMUM EIGENVALUE               =  0.10000E+31
+
+   *****ANSYS VERIFICATION RUN ONLY*****
+     DO NOT USE RESULTS FOR PRODUCTION
+
+  ***** FREQUENCIES FROM DAMPED EIGENSOLVER *****
+
+               COMPLEX FREQUENCY (HERTZ)
+  MODE     STABILITY            FREQUENCY         MODAL DAMPING RATIO
+
+
+    1      -7.9577472           20.144595    j      0.36740353    
+    2      -7.9577472          -20.144595    j      0.36740353    
+    3      -7.9577472           53.591321    j      0.14687903    
+    4      -7.9577472          -53.591321    j      0.14687903    
+    5       67.807063           0.0000000    j      -1.0000000    
+    6      -83.722557           0.0000000    j       1.0000000    
+    7      -7.9577472           146.93975    j      0.54077287E-01
+    8      -7.9577472          -146.93975    j      0.54077287E-01
+    9      -7.9577472           224.59000    j      0.35410110E-01
+   10      -7.9577472          -224.59000    j      0.35410110E-01
+   11      -7.9577472           310.21800    j      0.25643677E-01
+   12      -7.9577472          -310.21800    j      0.25643677E-01
+   13      -7.9577472           318.61927    j      0.24967938E-01
+   14      -7.9577472          -318.61927    j      0.24967938E-01
+   15      -7.9577472           375.48093    j      0.21188721E-01
+   16      -7.9577472          -375.48093    j      0.21188721E-01
+   17      -7.9577472           557.15706    j      0.14281315E-01
+   18      -7.9577472          -557.15706    j      0.14281315E-01
+   19      -7.9577472           637.51979    j      0.12481381E-01
+   20      -7.9577472          -637.51979    j      0.12481381E-01
+   21      -7.9577472           647.07550    j      0.12297090E-01
+   22      -7.9577472          -647.07550    j      0.12297090E-01
+   23      -7.9577472           870.32905    j      0.91429955E-02
+   24      -7.9577472          -870.32905    j      0.91429955E-02
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        80  SOLID273      0.000   0.000000
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1        80  SOLID273      0.000   0.000000
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.000
+
+
+
+ CLEAR ANSYS DATABASE AND RESTART
+
+ ANSYS Mechanical Enterprise                       
+
+ CURRENT JOBNAME REDEFINED AS pert273-11dpl11s-ref
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.000
+
+
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1   1357.15    
+ AN AVERAGE OF THE X-, Y-, AND Z-DIRECTION MASS TERMS ARE USED
+  Memory available (MB) =    0.0    ,  Memory required (MB) =    0.0    
+
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1      1760  SOLID186      0.000   0.000000
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1      1760  SOLID186      0.000   0.000000
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+ *** TIME =  0.100000         TIME INC =  0.100000      NEW TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     2  COMPLETED.    CUM ITER =      2
+ *** TIME =  0.200000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     3  COMPLETED.    CUM ITER =      3
+ *** TIME =  0.300000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     4  COMPLETED.    CUM ITER =      4
+ *** TIME =  0.400000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     5  COMPLETED.    CUM ITER =      5
+ *** TIME =  0.500000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     6  COMPLETED.    CUM ITER =      6
+ *** TIME =  0.600000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     7  COMPLETED.    CUM ITER =      7
+ *** TIME =  0.700000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     8  COMPLETED.    CUM ITER =      8
+ *** TIME =  0.800000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP     9  COMPLETED.    CUM ITER =      9
+ *** TIME =  0.900000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ *** LOAD STEP     1   SUBSTEP    10  COMPLETED.    CUM ITER =     10
+ *** TIME =   1.00000         TIME INC =  0.100000      OLD TRIANG MATRIX
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.000
+
+
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+ *** NOTE ***                            CP =       0.000   TIME= 00:00:00
+ This SOLVE command is only used to generate the matrices needed to      
+ perform the linear perturbation analysis.  The linear perturbation      
+ analysis corresponds to time = 1 (load step = 1, substep = 10).  No     
+ results are being written.                                              
+
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1   1357.15    
+ AN AVERAGE OF THE X-, Y-, AND Z-DIRECTION MASS TERMS ARE USED
+
+  DAMPED SYS CALCULATION OF UP TO   24 EIGENVECTORS.
+  NUMBER OF EQUATIONS              =        29040
+  MAXIMUM WAVEFRONT                =            0
+  MAXIMUM MODES STORED             =           24
+  MINIMUM EIGENVALUE               =  0.00000E+00
+  MAXIMUM EIGENVALUE               =  0.10000E+31
+
+   *****ANSYS VERIFICATION RUN ONLY*****
+     DO NOT USE RESULTS FOR PRODUCTION
+
+  ***** FREQUENCIES FROM DAMPED EIGENSOLVER *****
+
+               COMPLEX FREQUENCY (HERTZ)
+  MODE     STABILITY            FREQUENCY         MODAL DAMPING RATIO
+
+
+    1      -7.9577472           20.145921    j      0.36738261    
+    2      -7.9577472          -20.145921    j      0.36738261    
+    3      -7.9577472           53.592541    j      0.14687576    
+    4      -7.9577472          -53.592541    j      0.14687576    
+    5       67.808112           0.0000000    j      -1.0000000    
+    6      -83.723606           0.0000000    j       1.0000000    
+    7      -7.9577472           146.94539    j      0.54075218E-01
+    8      -7.9577472          -146.94539    j      0.54075218E-01
+    9      -7.9577472           224.58959    j      0.35410174E-01
+   10      -7.9577472          -224.58959    j      0.35410174E-01
+   11      -7.9577472           310.21862    j      0.25643626E-01
+   12      -7.9577472          -310.21862    j      0.25643626E-01
+   13      -7.9577472           318.61955    j      0.24967916E-01
+   14      -7.9577472          -318.61955    j      0.24967916E-01
+   15      -7.9577472           375.50618    j      0.21187297E-01
+   16      -7.9577472          -375.50618    j      0.21187297E-01
+   17      -7.9577472           557.15912    j      0.14281262E-01
+   18      -7.9577472          -557.15912    j      0.14281262E-01
+   19      -7.9577472           637.53500    j      0.12481083E-01
+   20      -7.9577472          -637.53500    j      0.12481083E-01
+   21      -7.9577472           647.16883    j      0.12295317E-01
+   22      -7.9577472          -647.16883    j      0.12295317E-01
+   23      -7.9577472           871.91244    j      0.91263932E-02
+   24      -7.9577472          -871.91244    j      0.91263932E-02
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1      1760  SOLID186      0.000   0.000000
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1      1760  SOLID186      0.000   0.000000
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.000
+
+
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          0
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
+
+ *---------------------------------------------------------------------------*
+ |                                                                           |
+ |                       DISTRIBUTED ANSYS RUN COMPLETED                     |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Ansys 2019 R1               Build 19.3         UP20181204     LINUX x64   |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Database Requested(-db)     1 MB    Scratch Memory Requested      1024 MB |
+ | Maximum Database Used       1 MB    Maximum Scratch Memory Used    229 MB |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |        CP Time      (sec) =         18.371       Time  =  16:46:53        |
+ |        Elapsed Time (sec) =         24.000       Date  =  10/10/2019      |
+ |                                                                           |
+ *---------------------------------------------------------------------------*

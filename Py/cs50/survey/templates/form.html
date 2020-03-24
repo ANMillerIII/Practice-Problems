@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <h1 class="mb-3">Number of Siblings</h1>
+
+    <form action="/form" method="post">
+        <div class="form-row">
+                <input id="first" name="firstName" type="text" class="form-control" placeholder="First name" autofocus>
+        </div><br>
+        <div class="form-row">
+                <input id="last" name="lastName" type="text" class="form-control" placeholder="Last name">
+        </div><br>
+        <h3>Do you have any siblings?</h3><br>
+        <input type="radio" name="boolSibs" id="yes" value="checker" required/> <label for="show">Yes</label>
+        <select id="dropdown" name="numSibs">
+            <option disabled selected value="">Number of Siblings</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5+">5+</option>
+        </select>
+        <br><input type="radio" name="boolSibs" checked required> No</input>
+        <button id="submit" class="btn btn-secondary" type="submit">Submit</button>
+    </form>
+
+    <script>
+    document.querySelector('form').onsubmit = function() {
+        if (!document.getElementById('first').value || !document.getElementById('last').value) {
+            alert('First and last names are required.');
+            return false;
+        }
+        if (document.getElementById('yes').checked) {
+            if (!document.querySelector('select').value) {
+                alert('Specify number of siblings.');
+                return false;
+            }
+        return true;
+        }
+    };
+    </script>
+
+{% endblock %}

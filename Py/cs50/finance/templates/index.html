@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h3>Portfolio</h3>
+<table>
+    <tr>
+        <th>Stocks</th>
+        <th>Shares</th>
+        <th>Current Price ($)</th>
+        <th>Total Value ($)</th>
+    </tr>
+    {% for stock in stocks %}
+    <tr>
+        <td>{{ stock.symbol }}</td>
+        <td>{{ stock.shares }}</td>
+        <td>{{ other[stock['symbol']] }}</td>
+        <td>{{ total[stock['symbol']] }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    <br>
+    <h5>Current cash balance: {{ cash }}</h5>
+{% endblock %}

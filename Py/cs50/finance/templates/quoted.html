@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <tr>
+        <th>{{quote.name}}</th>
+        <th>({{quote.symbol}})</th>
+        <th>{{price}}</th>
+    </tr>
+{% endblock %}

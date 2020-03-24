@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="static/styles.css" rel="stylesheet">
+        <title>Al Miller III</title>
+    </head>
+    <body>
+        <div id="nav-placeholder">
+        </div>
+        <div class="main">
+            <img id="sun" src="logos/se.png" height="300" width="300"></img>
+            <p class="hidden" id="stair1">It's good to see you, thanks for visiting.</p>
+            <p class="hidden" id="stair2">If you'd like to learn abit about me, kindly visit the links to your left.</p>
+            <p class="hidden" id="stair3">Otherwise, perhaps you will find <a style="text-decoration:underline"href="https://www.ted.com/talks/keiichiro_hirano_love_others_to_love_yourself?utm_campaign=tedspread&utm_medium=referral&utm_source=tedcomshare">this</a> to be worthwhile.</p>
+        </div>
+        <script>
+        $(function(){
+            $("#nav-placeholder").load("nav.html");
+        });
+        $(document).ready(function () {
+                setTimeout(function(){ $('#stair1').fadeIn(3000).removeClass('hidden'); }, 1000);
+                setTimeout(function(){ $('#stair2').fadeIn(3000).removeClass('hidden'); }, 3000);
+                setTimeout(function(){ $('#stair3').fadeIn(3000).removeClass('hidden'); }, 6000);
+        });
+        </script>
+    </body>
+</html>

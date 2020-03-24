@@ -1,0 +1,17 @@
+.NET OS and devlopment environment are the same
+.NET refers to Class Library (Coco, classes that are TCPIP stack that underly windows, 
+Visual studio languages - C#, VB.NET, c/C++, python Ruby etc.
+Console Windows Forms, WPF MFC Class Libraries, Controls, etc.
+Windows forms vs. WPF
+Solution above project, trace debug etc.,
+C# and VB.NET sister languages, use same class Libraries
+Eventhandler
+C# compiles to CLR to ASP.NET
+using
+namespace
+public/partial class?
+settings file
+constructor inheretance class 
+c item
+garbage collection, required deletion as you go
+

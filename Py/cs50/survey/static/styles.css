@@ -1,0 +1,38 @@
+#yes:not(:checked) ~ select {
+    display: none
+}
+
+#submit {
+    position:relative;
+    top:75px;
+    right:50px;
+}
+
+.form-control {
+    width:300px;
+}
+
+input[name="boolSibs"] {
+  /*position:relative;*/
+  margin:0px 10px 0px 0px;
+}
+
+#dropdown {
+    position:relative;
+    margin-left:25px;
+}
+
+body {
+    background-color: GhostWhite;
+}
+
+table {
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #d4d4d4;
+}
+
+tr:nth-child(even) {
+  background: #d4d4d4;
+}

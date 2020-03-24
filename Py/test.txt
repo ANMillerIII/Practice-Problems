@@ -1,0 +1,875 @@
+
+ ANSYS Mechanical Enterprise                       
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *                  ANSYS 19.2 LEGAL NOTICES                   *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2018 ANSYS, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2008 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+
+
+          *****  ANSYS COMMAND LINE ARGUMENTS  *****
+  INITIAL JOBNAME              = pert273-11dpl11s                                                                                                                                                                                                                                        
+  BATCH MODE REQUESTED (-b)    = LIST
+  INPUT FILE CasdfOPY MODE (-c)    = COPY
+  DISTRIBUTED MEMORY PARALLEL REQUESTED
+       2 PARALLEL PROCESSES REQUESTED WITH SINGLE THREAD PER PROCESS
+    TOTAL OF     2 CORES REQUESTED
+  INPUT FILE NAME              =  
+  START-UP FILE MODE           = NOREAD
+  STOP FILE MODE               = NOREAD
+
+ RELEASE= Release 19.2         BUILD= 19.2BETA  UP20180722   VERSION=LINUX x64   
+ CURRENT JOBNAME=pert273-11dpl11s0  11:02:50  JUL 23, 2018 CP=      0.299
+
+     1  /batch, list
+     0  /verify,pert273-11dpl11s
+     0  /title, pert273-11dpl11s, jahmed, Frequencies and modes shapes from LP modal. ET 273 vs 186 
+     0  /com,*===========================================================================   
+     0  /com,* OBJECTIVE:   
+     0  /com,* To verify modal frequencies and mode shapes of LP modal with ET 273  
+     0  /com,*  
+     0  /com,* DESCRIPTION: 
+     0  /com,* A hollow cylinder is modeled using ET 273. Both ends of the cylinder is  
+     0  /com,* fixed, and acceleration load is applied along y-axis. A linear static
+     0  /com,* solve is done, followed by linear perturbation modal analysis.   
+     0  /com,*  
+     0  /com,* An equivalent model (reference) is solved using ET 186.  
+     0  /com,*  
+     0  /com,* ET: 273, # of nodal planes: 11   
+     0  /com,* Material: Elastic
+     0  /com,* Loading: ACEL (base analysis)
+     0  /com,* Damping: ALPHAD  
+     0  /com,* Analysis: Linear static > LP modal (DAMP); restart at LAST sub-step  
+     0  /com,*  
+     0  /com,* All mode shapes are compared visually with reference.
+     0  /com*   
+     0  /com,* EXPECTED RESULTS:
+     0  /com,* Modal frequencies and mode shapes from 273 model should be close to  
+     0  /com,* those from 186. MAX/MIN S and U should have similar trends. Mode 
+     0  /com,* shape should be visually identical.  
+     0  /com,*===========================================================================   
+     0  /out,scratch
+     0      
+     0  ! Dimesions 
+     0  ra=0.1				! inner radius
+     0  rb=0.3				! outer radius
+     0  h=4					! height
+     0      
+     0  ! Line divisions
+     0  ndiv1=2				! radial 
+     0  ndiv2=11			! circumferential
+     0  ndiv3=40			! axial  
+     0      
+     0  load=2e5
+     0  nfreq=12*2			! x 2 for UNSYM solver	
+     0      
+     0  ! Cylinder axis along coordinate system 
+     0  coord=6 
+     0  parsav  
+     0      
+     0  /out
+     0  /com, ======================
+     0  /com, ET 273
+     0  /com, ======================
+     0  /out,scratch
+     0      
+     0  /filnam,pert273-11dpl11s-test   
+     0  /prep7  
+     0  et,1,273,,ndiv2 
+     0      
+     0  mp,ex,1,70e9
+     0  mp,nuxy,1,0.3   
+     0  mp,dens,1,2700  
+     0      
+     0  local,11,0,,,,-90,0,0   
+     0  csys,11 
+     0  wpcsys,1,11 
+     0      
+     0  rectng,ra,rb,0,h
+     0      
+     0  lesize,1,,,ndiv1
+     0  lesize,3,,,ndiv1
+     0      
+     0  lesize,2,,,ndiv3
+     0  lesize,4,,,ndiv3
+     0  amesh,1 
+     0      
+     0  sect,1,axis 
+     0  secd,2,11,2 
+     0  naxis   
+     0      
+     0  csys,coord  
+     0      
+     0  nsel,s,loc,z,0  
+     0  d,all,all,0 
+     0      
+     0  allsel,all  
+     0  acel,,load  
+     0  fini
+     0      
+     0  /eshape,1   
+     0  /pbc,u,1
+     0  /pbc,forc,1 
+     0  /psymb,csys,1   
+     0  eplot   
+     0      
+     0  /solu   
+     0  nlgeom,off  
+     0  rescontrol,linear,1,1   
+     0  outres,all,all  
+     0  time,1  
+     0  nsubst,10,100,1 
+     0      
+     0  solve   
+     0  fini
+     0      
+     0  /post1  
+     0  rsys,coord  
+     0  set,last
+     0  /show   
+     0  /graphics,power 
+     0  /eshape,1   
+     0  /dscale,1,1 
+     0      
+     0  plnsol,u,x  
+     0  *get,max_ux,plnsol,0,max
+     0  plnsol,u,y  
+     0  *get,max_uy,plnsol,0,max
+     0  plnsol,u,z  
+     0  *get,max_uz,plnsol,0,max
+     0      
+     0  /out
+     0  /com, ----------------  
+     0  /com, STATIC
+     0  /com, ----------------  
+     0  *stat   
+     0  /out,scratch
+     0  fini
+     0      
+     0  /SOLU   
+     0  antype,,restart,1,last,perturb  
+     0  perturb,modal,,,,nokeep 
+     0  solve,elform
+     0      
+     0  modopt,damp,nfreq,,,on  
+     0  mxpand,nfreq,,,YES  
+     0  outres,all,all  
+     0      
+     0  allsel,all  
+     0      
+     0  alpha,100   
+     0      
+     0  solve   
+     0  fini
+     0  save,,db
+     0      
+     0  /POST1  
+     0  file,,rstp  
+     0  /out
+     0  /com, ----------------  
+     0  /com, LP MODAL  
+     0  /com, ----------------  
+     0  set,list
+     0  set,1,10,,real  
+     0  rsys,coord  
+     0  /out,scratch
+     0      
+     0  /show   
+     0  /graphics,power 
+     0  /eshape,1   
+     0  /dscale,1,1 
+     0      
+     0  plnsol,u,x  
+     0  *get,max_ux,plnsol,0,max
+     0  *get,min_ux,plnsol,0,min
+     0  plnsol,u,y  
+     0  *get,max_uy,plnsol,0,max
+     0  *get,min_uy,plnsol,0,min
+     0  plnsol,u,z  
+     0  *get,max_uz,plnsol,0,max
+     0  *get,min_uz,plnsol,0,min
+     0      
+     0  plesol,s,x  
+     0  *get,max_sx,plnsol,0,max
+     0  *get,min_sx,plnsol,0,min
+     0  plesol,s,y  
+     0  *get,max_sy,plnsol,0,max
+     0  *get,min_sy,plnsol,0,min
+     0  plesol,s,z  
+     0  *get,max_sz,plnsol,0,max
+     0  *get,min_sz,plnsol,0,min
+     0  plesol,s,xy 
+     0  *get,max_sxy,plnsol,0,max   
+     0  *get,min_sxy,plnsol,0,min   
+     0  plesol,s,yz 
+     0  *get,max_syz,plnsol,0,max   
+     0  *get,min_syz,plnsol,0,min   
+     0  plesol,s,xz 
+     0  *get,max_sxz,plnsol,0,max   
+     0  *get,min_sxz,plnsol,0,min   
+     0  plesol,s,eqv
+     0  *get,max_seqv,plnsol,0,max  
+     0  *get,min_seqv,plnsol,0,min  
+     0      
+     0  /out
+     0  /com, ********************  
+     0  /com, REAL SOLUTION 
+     0  /com, ********************  
+     0  *stat   
+     0  /out,scratch
+     0      
+     0  *del,all
+     0  set,1,10,,imag  
+     0      
+     0  plnsol,u,x  
+     0  *get,max_ux,plnsol,0,max
+     0  *get,min_ux,plnsol,0,min
+     0  plnsol,u,y  
+     0  *get,max_uy,plnsol,0,max
+     0  *get,min_uy,plnsol,0,min
+     0  plnsol,u,z  
+     0  *get,max_uz,plnsol,0,max
+     0  *get,min_uz,plnsol,0,min
+     0      
+     0  plesol,s,x  
+     0  *get,max_sx,plnsol,0,max
+     0  *get,min_sx,plnsol,0,min
+     0  plesol,s,y  
+     0  *get,max_sy,plnsol,0,max
+     0  *get,min_sy,plnsol,0,min
+     0  plesol,s,z  
+     0  *get,max_sz,plnsol,0,max
+     0  *get,min_sz,plnsol,0,min
+     0  plesol,s,xy 
+     0  *get,max_sxy,plnsol,0,max   
+     0  *get,min_sxy,plnsol,0,min   
+     0  plesol,s,yz 
+     0  *get,max_syz,plnsol,0,max   
+     0  *get,min_syz,plnsol,0,min   
+     0  plesol,s,xz 
+     0  *get,max_sxz,plnsol,0,max   
+     0  *get,min_sxz,plnsol,0,min   
+     0  plesol,s,eqv
+     0  *get,max_seqv,plnsol,0,max  
+     0  *get,min_seqv,plnsol,0,min  
+     0      
+     0  ! /out  
+     0  ! /com, ********************
+     0  ! /com, IMAGINARY SOLUTION  
+     0  ! /com, ********************
+     0  ! *stat 
+     0  /out,scratch
+     0      
+     0  fini
+     0      
+     0  !----------------------------------------------------------------------------------------   
+     0  /clear,nostart  
+     0  /out
+     0  /com, ======================
+     0  /com, ET 186
+     0  /com, ======================
+     0  /out,scratch
+     0      
+     0  parres  
+     0      
+     0  ndiv2=ndiv2*2		! <------ to be comparable with integration planes in 273
+     0      
+     0  /filnam,pert273-11dpl11s-ref
+     0  /prep7  
+     0  et,1,186
+     0  keyopt,1,12,1   
+     0      
+     0  mp,ex,1,70e9
+     0  mp,nuxy,1,0.3   
+     0  mp,dens,1,2700  
+     0      
+     0  local,11,0,,,,-90,0,0   
+     0  csys,11 
+     0  wpcsys,1,11 
+     0      
+     0  rectng,ra,rb,0,h
+     0  k,1001,0,0  
+     0  k,1002,0,h  
+     0      
+     0  lesize,1,,,ndiv1
+     0  lesize,3,,,ndiv1
+     0      
+     0  lesize,2,,,ndiv3
+     0  lesize,4,,,ndiv3
+     0      
+     0  vrotat,all,,,,,,1001,1002,360/ndiv2,1   
+     0      
+     0  csys,coord  
+     0  vgen,ndiv2,1,,,,360/ndiv2   
+     0  vglue,all   
+     0      
+     0  esize,,1
+     0      
+     0  allsel,all  
+     0  vmesh,all   
+     0      
+     0  /view,1,1,1,1   
+     0  /ang,1  
+     0  /rep,fast   
+     0      
+     0  nsel,s,loc,z,0  
+     0  d,all,all,0 
+     0      
+     0  allsel,all  
+     0  acel,,load  
+     0      
+     0  /solu   
+     0  nlgeom,off  
+     0  rescontrol,linear,1,1   
+     0  outres,all,all  
+     0  time,1  
+     0  nsubst,10,100,1 
+     0      
+     0  solve   
+     0  fini
+     0      
+     0  /post1  
+     0  rsys,coord  
+     0  set,last
+     0  /show   
+     0  /graphics,power 
+     0  /eshape,1   
+     0  /dscale,1,1 
+     0      
+     0  plnsol,u,x  
+     0  *get,max_ux,plnsol,0,max
+     0  plnsol,u,y  
+     0  *get,max_uy,plnsol,0,max
+     0  plnsol,u,z  
+     0  *get,max_uz,plnsol,0,max
+     0      
+     0  /out
+     0  /com, ----------------  
+     0  /com, STATIC
+     0  /com, ----------------  
+     0  *stat   
+     0  /out,scratch
+     0  fini
+     0      
+     0  /SOLU   
+     0  antype,,restart,1,last,perturb  
+     0  perturb,modal,,,,nokeep 
+     0  solve,elform
+     0      
+     0  modopt,damp,nfreq,,,on  
+     0  mxpand,nfreq,,,YES  
+     0  outres,all,all  
+     0      
+     0  allsel,all  
+     0      
+     0  alpha,100   
+     0      
+     0  SOLVE   
+     0  fini
+     0  save,,db
+     0      
+     0  /POST1  
+     0  file,,rstp  
+     0  /out
+     0  /com, ----------------  
+     0  /com, LP MODAL  
+     0  /com, ----------------  
+     0  set,list
+     0  set,1,10,,real  
+     0  rsys,coord  
+     0  /out,scratch
+     0      
+     0  plnsol,u,x  
+     0  *get,max_ux,plnsol,0,max
+     0  *get,min_ux,plnsol,0,min
+     0  plnsol,u,y  
+     0  *get,max_uy,plnsol,0,max
+     0  *get,min_uy,plnsol,0,min
+     0  plnsol,u,z  
+     0  *get,max_uz,plnsol,0,max
+     0  *get,min_uz,plnsol,0,min
+     0      
+     0  plesol,s,x  
+     0  *get,max_sx,plnsol,0,max
+     0  *get,min_sx,plnsol,0,min
+     0  plesol,s,y  
+     0  *get,max_sy,plnsol,0,max
+     0  *get,min_sy,plnsol,0,min
+     0  plesol,s,z  
+     0  *get,max_sz,plnsol,0,max
+     0  *get,min_sz,plnsol,0,min
+     0  plesol,s,xy 
+     0  *get,max_sxy,plnsol,0,max   
+     0  *get,min_sxy,plnsol,0,min   
+     0  plesol,s,yz 
+     0  *get,max_syz,plnsol,0,max   
+     0  *get,min_syz,plnsol,0,min   
+     0  plesol,s,xz 
+     0  *get,max_sxz,plnsol,0,max   
+     0  *get,min_sxz,plnsol,0,min   
+     0  plesol,s,eqv
+     0  *get,max_seqv,plnsol,0,max  
+     0  *get,min_seqv,plnsol,0,min  
+     0      
+     0  /out
+     0  /com, ********************  
+     0  /com, REAL SOLUTION 
+     0  /com, ********************  
+     0  *stat   
+     0  /out,scratch
+     0      
+     0  *del,all
+     0  set,1,10,,imag  
+     0      
+     0  /show   
+     0  /graphics,power 
+     0  /eshape,1   
+     0  /dscale,1,1 
+     0      
+     0  plnsol,u,x  
+     0  *get,max_ux,plnsol,0,max
+     0  *get,min_ux,plnsol,0,min
+     0  plnsol,u,y  
+     0  *get,max_uy,plnsol,0,max
+     0  *get,min_uy,plnsol,0,min
+     0  plnsol,u,z  
+     0  *get,max_uz,plnsol,0,max
+     0  *get,min_uz,plnsol,0,min
+     0      
+     0  plesol,s,x  
+     0  *get,max_sx,plnsol,0,max
+     0  *get,min_sx,plnsol,0,min
+     0  plesol,s,y  
+     0  *get,max_sy,plnsol,0,max
+     0  *get,min_sy,plnsol,0,min
+     0  plesol,s,z  
+     0  *get,max_sz,plnsol,0,max
+     0  *get,min_sz,plnsol,0,min
+     0  plesol,s,xy 
+     0  *get,max_sxy,plnsol,0,max   
+     0  *get,min_sxy,plnsol,0,min   
+     0  plesol,s,yz 
+     0  *get,max_syz,plnsol,0,max   
+     0  *get,min_syz,plnsol,0,min   
+     0  plesol,s,xz 
+     0  *get,max_sxz,plnsol,0,max   
+     0  *get,min_sxz,plnsol,0,min   
+     0  plesol,s,eqv
+     0  *get,max_seqv,plnsol,0,max  
+     0  *get,min_seqv,plnsol,0,min  
+     0      
+     0  ! /out  
+     0  ! /com, ********************
+     0  ! /com, IMAGINARY SOLUTION  
+     0  ! /com, ********************
+     0  ! *stat 
+     0  fini
+     0  /exit,nosave
+
+ *** VERIFICATION RUN - CASE pert273-11dpl11s                 ***  OPTION=  4
+
+ TITLE= 
+  pert273-11dpl11s, jahmed, Frequencies and modes shapes from LP modal. ET 273 
+
+ *===========================================================================
+ * OBJECTIVE:
+ * To verify modal frequencies and mode shapes of LP modal with ET 273
+ *
+ * DESCRIPTION:
+ * A hollow cylinder is modeled using ET 273. Both ends of the cylinder is
+ * fixed, and acceleration load is applied along y-axis. A linear static
+ * solve is done, followed by linear perturbation modal analysis.
+ *
+ * An equivalent model (reference) is solved using ET 186.
+ *
+ * ET: 273, # of nodal planes: 11
+ * Material: Elastic
+ * Loading: ACEL (base analysis)
+ * Damping: ALPHAD
+ * Analysis: Linear static > LP modal (DAMP); restart at LAST sub-step
+ *
+ * All mode shapes are compared visually with reference.
+  
+ * EXPECTED RESULTS:
+ * Modal frequencies and mode shapes from 273 model should be close to
+ * those from 186. MAX/MIN S and U should have similar trends. Mode
+ * shape should be visually identical.
+ *===========================================================================
+
+ /OUTPUT FILE=         
+  ======================
+  ET 273
+  ======================
+
+ /OUTPUT FILE=         
+  ----------------
+  STATIC
+  ----------------
+
+ ABBREVIATION STATUS-
+
+  ABBREV    STRING
+  SAVE_DB   SAVE
+  RESUM_DB  RESUME
+  QUIT      Fnc_/EXIT
+  POWRGRPH  Fnc_/GRAPHICS
+
+ PARAMETER STATUS-           (     14 PARAMETERS DEFINED)
+                  (INCLUDING        2 INTERNAL PARAMETERS)
+
+ NAME                              VALUE                        TYPE  DIMENSIONS
+ COORD                             6.00000000                  SCALAR
+ H                                 4.00000000                  SCALAR
+ LOAD                              200000.000                  SCALAR
+ MAX_UX                            9.97905540                  SCALAR
+ MAX_UY                            9.87722191                  SCALAR
+ MAX_UZ                           0.979094505                  SCALAR
+ NDIV1                             2.00000000                  SCALAR
+ NDIV2                             11.0000000                  SCALAR
+ NDIV3                             40.0000000                  SCALAR
+ NFREQ                             24.0000000                  SCALAR
+ RA                               0.100000000                  SCALAR
+ RB                               0.300000000                  SCALAR
+
+ /OUTPUT FILE=         
+  ----------------
+  LP MODAL
+  ----------------
+
+
+  *****  INDEX OF DATA SETS ON RESULTS FILE  *****
+
+   SET   TIME/FREQ    LOAD STEP   SUBSTEP  CUMULATIVE
+     1 -7.9577             1         1         1                  
+     2  20.145             1         1         1                  
+     3 -7.9577             1         2         2                  
+     4 -20.145             1         2         2                  
+     5 -7.9577             1         3         3                  
+     6  53.591             1         3         3                  
+     7 -7.9577             1         4         4                  
+     8 -53.591             1         4         4                  
+     9  67.807             1         5         5                  
+    10  0.0000             1         5         5                  
+    11 -83.723             1         6         6                  
+    12  0.0000             1         6         6                  
+    13 -7.9577             1         7         7                  
+    14  146.94             1         7         7                  
+    15 -7.9577             1         8         8                  
+    16 -146.94             1         8         8                  
+    17 -7.9577             1         9         9                  
+    18  224.59             1         9         9                  
+    19 -7.9577             1        10        10                  
+    20 -224.59             1        10        10                  
+    21 -7.9577             1        11        11                  
+    22  310.22             1        11        11                  
+    23 -7.9577             1        12        12                  
+    24 -310.22             1        12        12                  
+    25 -7.9577             1        13        13                  
+    26  318.62             1        13        13                  
+    27 -7.9577             1        14        14                  
+    28 -318.62             1        14        14                  
+    29 -7.9577             1        15        15                  
+    30  375.48             1        15        15                  
+    31 -7.9577             1        16        16                  
+    32 -375.48             1        16        16                  
+    33 -7.9577             1        17        17                  
+    34  557.16             1        17        17                  
+    35 -7.9577             1        18        18                  
+    36 -557.16             1        18        18                  
+    37 -7.9577             1        19        19                  
+    38  637.52             1        19        19                  
+    39 -7.9577             1        20        20                  
+    40 -637.52             1        20        20                  
+    41 -7.9577             1        21        21                  
+    42  647.08             1        21        21                  
+    43 -7.9577             1        22        22                  
+    44 -647.08             1        22        22                  
+    45 -7.9577             1        23        23                  
+    46  870.62             1        23        23                  
+    47 -7.9577             1        24        24                  
+    48 -870.62             1        24        24                  
+
+
+ USE LOAD STEP     1  SUBSTEP    10  FOR LOAD CASE 0 
+
+ SET COMMAND GOT LOAD STEP=     1  SUBSTEP=    10  CUMULATIVE ITERATION=    10
+   TIME/FREQUENCY= -7.9577    
+ TITLE=  pert273-11dpl11s, jahmed, Frequencies and modes shapes from LP modal. E
+
+ RSYS KEY SET TO   6
+
+ USE COORDINATE SYSTEM   6 FOR SOLUTION RESULTS
+
+ /OUTPUT FILE=         
+  ********************
+  REAL SOLUTION
+  ********************
+
+ ABBREVIATION STATUS-
+
+  ABBREV    STRING
+  SAVE_DB   SAVE
+  RESUM_DB  RESUME
+  QUIT      Fnc_/EXIT
+  POWRGRPH  Fnc_/GRAPHICS
+
+ PARAMETER STATUS-           (     31 PARAMETERS DEFINED)
+                  (INCLUDING        2 INTERNAL PARAMETERS)
+
+ NAME                              VALUE                        TYPE  DIMENSIONS
+ COORD                             6.00000000                  SCALAR
+ H                                 4.00000000                  SCALAR
+ LOAD                              200000.000                  SCALAR
+ MAX_SEQV                         1.343016320E+009             SCALAR
+ MAX_SX                            276853984.                  SCALAR
+ MAX_SXY                           152278368.                  SCALAR
+ MAX_SXZ                           244591120.                  SCALAR
+ MAX_SY                            382559424.                  SCALAR
+ MAX_SYZ                           250895856.                  SCALAR
+ MAX_SZ                            832803904.                  SCALAR
+ MAX_UX                           3.314553259E-002             SCALAR
+ MAX_UY                           2.470046841E-002             SCALAR
+ MAX_UZ                           1.110101771E-002             SCALAR
+ MIN_SEQV                          799666.875                  SCALAR
+ MIN_SX                           -276853984.                  SCALAR
+ MIN_SXY                          -191269552.                  SCALAR
+ MIN_SXZ                          -244591136.                  SCALAR
+ MIN_SY                           -382559424.                  SCALAR
+ MIN_SYZ                          -775309696.                  SCALAR
+ MIN_SZ                           -832803904.                  SCALAR
+ MIN_UX                          -3.314553289E-002             SCALAR
+ MIN_UY                          -5.957983434E-002             SCALAR
+ MIN_UZ                          -1.110101771E-002             SCALAR
+ NDIV1                             2.00000000                  SCALAR
+ NDIV2                             11.0000000                  SCALAR
+ NDIV3                             40.0000000                  SCALAR
+ NFREQ                             24.0000000                  SCALAR
+ RA                               0.100000000                  SCALAR
+ RB                               0.300000000                  SCALAR
+
+ /OUTPUT FILE=         
+  ======================
+  ET 186
+  ======================
+
+ /OUTPUT FILE=         
+  ----------------
+  STATIC
+  ----------------
+
+ ABBREVIATION STATUS-
+
+  ABBREV    STRING
+  SAVE_DB   SAVE
+  RESUM_DB  RESUME
+  QUIT      Fnc_/EXIT
+  POWRGRPH  Fnc_/GRAPHICS
+
+ PARAMETER STATUS-           (     14 PARAMETERS DEFINED)
+                  (INCLUDING        2 INTERNAL PARAMETERS)
+
+ NAME                              VALUE                        TYPE  DIMENSIONS
+ COORD                             6.00000000                  SCALAR
+ H                                 4.00000000                  SCALAR
+ LOAD                              200000.000                  SCALAR
+ MAX_UX                            9.97927570                  SCALAR
+ MAX_UY                            9.87743900                  SCALAR
+ MAX_UZ                           0.979116499                  SCALAR
+ NDIV1                             2.00000000                  SCALAR
+ NDIV2                             22.0000000                  SCALAR
+ NDIV3                             40.0000000                  SCALAR
+ NFREQ                             24.0000000                  SCALAR
+ RA                               0.100000000                  SCALAR
+ RB                               0.300000000                  SCALAR
+
+ /OUTPUT FILE=         
+  ----------------
+  LP MODAL
+  ----------------
+
+
+  *****  INDEX OF DATA SETS ON RESULTS FILE  *****
+
+   SET   TIME/FREQ    LOAD STEP   SUBSTEP  CUMULATIVE
+     1 -7.9577             1         1         1                  
+     2  20.146             1         1         1                  
+     3 -7.9577             1         2         2                  
+     4 -20.146             1         2         2                  
+     5 -7.9577             1         3         3                  
+     6  53.593             1         3         3                  
+     7 -7.9577             1         4         4                  
+     8 -53.593             1         4         4                  
+     9  67.808             1         5         5                  
+    10  0.0000             1         5         5                  
+    11 -83.724             1         6         6                  
+    12  0.0000             1         6         6                  
+    13 -7.9577             1         7         7                  
+    14  146.95             1         7         7                  
+    15 -7.9577             1         8         8                  
+    16 -146.95             1         8         8                  
+    17 -7.9577             1         9         9                  
+    18  224.59             1         9         9                  
+    19 -7.9577             1        10        10                  
+    20 -224.59             1        10        10                  
+    21 -7.9577             1        11        11                  
+    22  310.22             1        11        11                  
+    23 -7.9577             1        12        12                  
+    24 -310.22             1        12        12                  
+    25 -7.9577             1        13        13                  
+    26  318.62             1        13        13                  
+    27 -7.9577             1        14        14                  
+    28 -318.62             1        14        14                  
+    29 -7.9577             1        15        15                  
+    30  375.51             1        15        15                  
+    31 -7.9577             1        16        16                  
+    32 -375.51             1        16        16                  
+    33 -7.9577             1        17        17                  
+    34  557.16             1        17        17                  
+    35 -7.9577             1        18        18                  
+    36 -557.16             1        18        18                  
+    37 -7.9577             1        19        19                  
+    38  637.52             1        19        19                  
+    39 -7.9577             1        20        20                  
+    40 -637.52             1        20        20                  
+    41 -7.9577             1        21        21                  
+    42  647.16             1        21        21                  
+    43 -7.9577             1        22        22                  
+    44 -647.16             1        22        22                  
+    45 -7.9577             1        23        23                  
+    46  870.30             1        23        23                  
+    47 -7.9577             1        24        24                  
+    48 -870.30             1        24        24                  
+
+
+ USE LOAD STEP     1  SUBSTEP    10  FOR LOAD CASE 0 
+
+ SET COMMAND GOT LOAD STEP=     1  SUBSTEP=    10  CUMULATIVE ITERATION=    10
+   TIME/FREQUENCY= -7.9577    
+ TITLE=                                                                         
+
+ RSYS KEY SET TO   6
+
+ USE COORDINATE SYSTEM   6 FOR SOLUTION RESULTS
+
+ /OUTPUT FILE=         
+  ********************
+  REAL SOLUTION
+  ********************
+
+ ABBREVIATION STATUS-
+
+  ABBREV    STRING
+  SAVE_DB   SAVE
+  RESUM_DB  RESUME
+  QUIT      Fnc_/EXIT
+  POWRGRPH  Fnc_/GRAPHICS
+
+ PARAMETER STATUS-           (     31 PARAMETERS DEFINED)
+                  (INCLUDING        2 INTERNAL PARAMETERS)
+
+ NAME                              VALUE                        TYPE  DIMENSIONS
+ COORD                             6.00000000                  SCALAR
+ H                                 4.00000000                  SCALAR
+ LOAD                              200000.000                  SCALAR
+ MAX_SEQV                         1.358909696E+009             SCALAR
+ MAX_SX                            279744256.                  SCALAR
+ MAX_SXY                           82804656.0                  SCALAR
+ MAX_SXZ                           250227200.                  SCALAR
+ MAX_SY                            392582656.                  SCALAR
+ MAX_SYZ                           254004448.                  SCALAR
+ MAX_SZ                            841556416.                  SCALAR
+ MAX_UX                           3.314621703E-002             SCALAR
+ MAX_UY                           2.470088378E-002             SCALAR
+ MAX_UZ                           1.110125985E-002             SCALAR
+ MIN_SEQV                          1306346.75                  SCALAR
+ MIN_SX                           -279744256.                  SCALAR
+ MIN_SXY                          -99317672.0                  SCALAR
+ MIN_SXZ                          -250227200.                  SCALAR
+ MIN_SY                           -392582656.                  SCALAR
+ MIN_SYZ                          -784485568.                  SCALAR
+ MIN_SZ                           -841556416.                  SCALAR
+ MIN_UX                          -3.314621728E-002             SCALAR
+ MIN_UY                          -5.958049372E-002             SCALAR
+ MIN_UZ                          -1.110125985E-002             SCALAR
+ NDIV1                             2.00000000                  SCALAR
+ NDIV2                             22.0000000                  SCALAR
+ NDIV3                             40.0000000                  SCALAR
+ NFREQ                             24.0000000                  SCALAR
+ RA                               0.100000000                  SCALAR
+ RB                               0.300000000                  SCALAR
+
+ /OUTPUT FILE=         
+
+
+ *---------------------------------------------------------------------------*
+ |                                                                           |
+ |                       DISTRIBUTED ANSYS RUN COMPLETED                     |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Ansys Release 19.2          Build 19.2BETA     UP20180722     LINUX x64   |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Database Requested(-db)  1024 MB    Scratch Memory Requested      1024 MB |
+ | Maximum Database Used      16 MB    Maximum Scratch Memory Used    248 MB |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |        CP Time      (sec) =         52.565       Time  =  11:03:39        |
+ |        Elapsed Time (sec) =         51.000       Date  =  07/23/2018      |
+ |                                                                           |
+ *---------------------------------------------------------------------------*

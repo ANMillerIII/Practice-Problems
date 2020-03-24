@@ -1,0 +1,101 @@
+html {
+    height: 100%;
+}
+
+.sidenav {
+    position: fixed;
+    padding: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 35px;
+    /*position: fixed;*/
+    margin-left: 0px;
+    margin-top: 120px;
+    /*margin-bottom: auto;*/
+}
+
+/*logos {*/
+    /*position: relative;*/
+    /*margin-top: -100px;*/
+/*}*/
+.column {
+    padding: 10px;
+}
+
+.logos:hover{
+    filter: opacity(0.5);
+}
+
+.row {  /*logos*/
+    /*position: relative;*/
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.main {
+    margin-left: 275px
+}
+
+iframe {
+    position: relative;
+    margin-top: 100px;
+    margin-left: 300px;
+
+}
+
+p {
+    position: relative;
+    margin-left: 250px;
+    margin-right: auto;
+    margin-top: 70px;
+}
+
+body {
+    font-family: garamond;
+    font-size: 20px;
+    margin:0;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0), rgba(210,180,140,0.45));
+    background-repeat: no-repeat;
+}
+
+a {
+    color: black;
+    text-decoration:none;
+}
+
+a:hover {
+    color: #556B2F;
+    text-decoration:none;
+}
+
+#quote {
+    margin-top:100px;
+    margin-left:300px;
+    font-style:italic;
+}
+
+#stair1 {
+    margin-top: -100px;
+    margin-left: 150px;
+}
+
+#stair3 {
+    margin-left: 150px;
+}
+
+#sun {
+    height: 250px;
+    width: 250px;
+    margin-left: 800px;
+}
+
+#myName {
+    margin-left: 10px;
+    margin-top:300px;
+}
+.hidden{
+  display: none;
+}
